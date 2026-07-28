@@ -20,6 +20,31 @@ not NoHoldPay still exists.
 Keep the kit somewhere you can reach when the platform is down. It is not
 secret in the sense of a private key, but it is what makes recovery quick.
 
+## Which file do I download?
+
+| Your computer | Download this file |
+| --- | --- |
+| **Mac** with Apple Silicon (M1, M2, M3, M4) | `noholdpay-recover-v1.0.0-darwin-arm64` |
+| **Mac** with an Intel processor | `noholdpay-recover-v1.0.0-darwin-amd64` |
+| **Windows** | `noholdpay-recover-v1.0.0-windows-amd64.exe` |
+| **Linux** on a normal PC or server | `noholdpay-recover-v1.0.0-linux-amd64` |
+| **Linux** on ARM (Raspberry Pi, ARM server) | `noholdpay-recover-v1.0.0-linux-arm64` |
+
+"darwin" is the internal name for macOS and "amd64" means a normal
+64-bit Intel or AMD processor, not an AMD-only one. The file names use
+those terms because that is what the checksums and signatures are issued
+against, so they have to match exactly.
+
+**Not sure which Mac you have?** Apple menu, then About This Mac. If the
+Chip line says Apple M1, M2, M3 or M4, take Apple Silicon. If it says
+Intel, take the Intel file.
+
+**Not sure on Windows?** Almost every Windows PC takes the `windows` file
+above. There is only one.
+
+Download each file with the matching `.sigstore.json` beside it - that is
+the signature, and you need both to verify.
+
 ## Verify before you run it
 
 This binary will handle a key that controls your funds. Verify it first.
