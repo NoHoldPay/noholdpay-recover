@@ -39,7 +39,7 @@ and log proof:
 ```
 cosign verify-blob \
   --bundle noholdpay-recover-v1.0.0-linux-amd64.sigstore.json \
-  --certificate-identity-regexp '^https://github\.com/noholdpay/noholdpay/\.github/workflows/release-recover-cli\.yml@refs/tags/recover-cli/' \
+  --certificate-identity-regexp '^https://github\.com/NoHoldPay/noholdpay/\.github/workflows/release-recover-cli\.yml@refs/tags/recover-cli/' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
   noholdpay-recover-v1.0.0-linux-amd64
 ```
@@ -47,6 +47,10 @@ cosign verify-blob \
 This proves the binary was produced by that exact workflow, from a specific
 commit, and has not been altered since. Verification is entirely offline
 against public logs.
+
+The capitalisation in that identity is significant. It is matched as a
+case-sensitive regular expression against the signing certificate, so
+`NoHoldPay` must be spelled exactly as shown.
 
 ## Run it
 
